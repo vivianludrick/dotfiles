@@ -44,6 +44,7 @@ local opts = {
 		["<CR>"] = { "select_and_accept", "fallback" },
 		["<C-l>"] = { "snippet_forward", "fallback" },
 		["<C-h>"] = { "snippet_backward", "fallback" },
+		["<C-\\>"] = { "hide", "fallback" },
 		["<A-1>"] = {
 			function(cmp)
 				cmp.accept({ index = 1 })

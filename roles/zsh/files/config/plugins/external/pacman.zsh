@@ -11,14 +11,16 @@ pacd() {
 	pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
 }
 
-# Function to search and install packages using paru
-pari() {
-	paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S
+# Function to search and install packages using yay
+yayi() {
+	yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S
 }
 
-parf() {
-	paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -Si
+yayf() {
+	yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -Si
 }
+
+alias yayu='yay'
 
 # Unfortunately you need sudo for pacman ;-;
-alias yay='paru'
+alias paru='yay'

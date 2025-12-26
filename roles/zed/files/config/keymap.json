@@ -13,7 +13,7 @@
       "g d": "editor::GoToDefinition",
       "g h": "editor::MoveToBeginningOfLine",
       "g l": "editor::MoveToEndOfLine",
-      "g r": "editor::FindAllReferences",
+      "g r r": "editor::FindAllReferences",
       "space /": "buffer_search::Deploy",
       "space D": "editor::GoToTypeDefinition",
       "space Z": "workspace::ToggleZoom",
@@ -40,21 +40,21 @@
       "space space": "file_finder::Toggle",
       "space t h": "editor::ToggleInlayHints",
       "space w s": "project_symbols::Toggle",
-      "space z": "vim::MaximizePane"
-    }
+      "space z": "vim::MaximizePane",
+    },
   },
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !menu",
     "bindings": {
-      "ctrl-/": "assistant::InlineAssist"
-    }
+      "ctrl-/": "assistant::InlineAssist",
+    },
   },
   {
     // "context": "Editor && (vim_mode == normal || vim_mode == terminal) && !menu",
     "bindings": {
       "ctrl-t": "workspace::ToggleBottomDock",
-      "ctrl-e": "workspace::ToggleRightDock"
-    }
+      "ctrl-e": "workspace::ToggleRightDock",
+    },
   },
   {
     "context": "Editor && vim_mode == visual && !menu",
@@ -62,29 +62,29 @@
       "<": "editor::Outdent",
       ">": "editor::Indent",
       "shift-j": "editor::MoveLineDown",
-      "shift-k": "editor::MoveLineUp"
-    }
+      "shift-k": "editor::MoveLineUp",
+    },
   },
   {
     "context": "Editor && vim_mode == insert && !menu",
-    "bindings": {}
+    "bindings": {},
   },
   {
     "context": "BufferSearchBar",
     "bindings": {
-      "alt-enter": null
-    }
+      "alt-enter": null,
+    },
   },
   {
     "context": "Pane",
     "bindings": {
-      "alt-enter": null
-    }
+      "alt-enter": null,
+    },
   },
   {
     "context": "(Editor && mode == full)",
     "bindings": {
-      "alt-enter": null
-    }
-  }
+      "alt-enter": null,
+    },
+  },
 ]
