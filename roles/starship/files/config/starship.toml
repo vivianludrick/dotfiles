@@ -2,14 +2,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = '''
- [╭──](green)$username$directory$git_branch  $bun$c$dart$golang$java$kotlin$lua$python$rust$zig
- $character$python_virtualenv
-'''
+ [╭──](bold green)$directory$git_branch$git_status $python
+ $character'''
 right_format = '''
 $cmd_duration
 '''
 
-continuation_prompt = ' '
+continuation_prompt = ' '
 palette = "catppuccin_mocha"
 
 [character]
@@ -26,11 +25,11 @@ min_time_to_notify = 60000 # notify about the command completion every minute
 [directory]
 home_symbol = ' '
 read_only = ' '
-format = '[$read_only](bold red) [$path](bold cyan)'
+format = '[$read_only](bold red) [$path](bold blue)'
 
 [username]
-format = '[$user](bold cyan)'
-# show_always = true
+format = '[$user](bold blue)'
+show_always = true
 
 [git_branch]
 format = ' [\($symbol$branch\)]($style)'
@@ -69,33 +68,9 @@ crust = "#11111b"
 # +-------------------+
 # | Language specific |
 # +-------------------+
-[bun]
-symbol = '🍞'
-format = '[$symbol $version](bold )'
-
-[c]
-format = '[$symbol$version](bold )'
-
-[dart]
-format = '[$symbol$version](bold )'
-
-[golang]
-format = '[$symbol$version](bold blue)'
-
-[java]
-format = '[$symbol$version](bold blue)'
-
-[kotlin]
-format = '[$symbol$version](bold blue)'
-
-[lua]
-format = '[$symbol$version](bold blue)'
-
 [python]
-format = '[$virtualenv](bold cyan) --- [$symbol$version](bold blue)'
-
-[rust]
-format = "[$symbol$version](bold red)"
-
-[zig]
-format = "[$symbol$version](bold red)"
+# detect off so that it is only activated for virtual virtualenv 
+# and not the python files
+detect_extensions = []
+detect_files = []
+format = '[\($symbol$virtualenv\)](bold blue)'
