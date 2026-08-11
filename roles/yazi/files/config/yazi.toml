@@ -10,7 +10,7 @@ mouse_events = [ "click", "scroll", "touch", "move","drag"]
 
 [open]
 rules = [
-	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ url = "*/", use = [ "edit", "open", "reveal" ] },
 
 	{ mime = "*", use = [ "open" ] },
 ]
@@ -22,26 +22,28 @@ open = [
 
 [plugin]
 [[plugin.prepend_previewers]]
-name = "*.md"
-run  = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
-
-[[plugin.prepend_previewers]]
-name = "*.csv"
+id = "csv"
+group = "csv"
+url = "*.csv"
 run  = 'piper -- bat -p --color=always "$1"'
 
 [[plugin.append_previewers]]
-name = "*"
+id = "binary"
+group = "binary"
+url = "*"
 run  = 'piper -- hexyl --border=none --terminal-width=$w "$1"'
 
-[[plugin.prepend_fetchers]]
-id   = "git"
-name = "*"
-run  = "git"
-
-[[plugin.prepend_fetchers]]
-id   = "git"
-name = "*/"
-run  = "git"
+# [[plugin.prepend_fetchers]]
+# id   = "git"
+# group   = "git"
+# url = "*"
+# run  = "git"
+#
+# [[plugin.prepend_fetchers]]
+# id   = "git"
+# group   = "git"
+# url = "*/"
+# run  = "git"
 
 [preview]
 tab_size        = 2
